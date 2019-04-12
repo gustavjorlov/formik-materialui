@@ -5,20 +5,17 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import * as yup from "yup";
 
-const MICTextField = ({ field, form: { touched, errors }, ...props }) => {
-  console.log({ field, touched, errors, props });
-  return (
-    <TextField
-      {...field}
-      label={props.label}
-      helperText={errors[field.name]}
-      error={touched[field.name] && !!errors[field.name]}
-      value={field.value}
-      onBlur={field.onBlur}
-      onChange={field.onChange}
-    />
-  );
-};
+const MICTextField = ({ field, form: { touched, errors }, ...props }) => (
+  <TextField
+    {...field}
+    label={props.label}
+    helperText={errors[field.name]}
+    error={touched[field.name] && !!errors[field.name]}
+    value={field.value}
+    onBlur={field.onBlur}
+    onChange={field.onChange}
+  />
+);
 
 class App extends Component {
   render() {
